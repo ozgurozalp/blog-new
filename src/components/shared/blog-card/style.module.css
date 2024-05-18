@@ -1,0 +1,75 @@
+.blogCardContainer {
+  display: grid;
+  overflow: hidden;
+  min-height: 400px;
+  height: 100%;
+  width: 100%;
+  grid-template-columns: auto;
+  grid-template-rows: repeat(6, auto);
+  grid-template-areas: "cover" "date" "title" "tags" "description" "author";
+  row-gap: 18px;
+
+  @media (min-width: 768px) {
+    background: #fff;
+    min-height: 688px;
+    height: inherit;
+    grid-template-columns: auto auto;
+    grid-template-rows: repeat(3, auto) 1fr auto;
+    grid-template-areas: "cover cover" "date date" "title title" "description description" "author tags";
+  }
+
+  @apply md:border-[--brand] md:rounded-4xl py-3 md:border-2 md:p-8;
+}
+
+.blogCardCover {
+  height: 174px;
+  grid-area: cover;
+  aspect-ratio: 16 / 9;
+  @apply border-[--brand] relative overflow-hidden rounded-3xl border-2 md:-mx-8 md:-mt-8 md:rounded-none md:border-0 md:border-b-2 md:border-dashed;
+
+  @media (min-width: 640px) {
+    min-height: 340px;
+    max-height: 340px;
+  }
+}
+
+.blogCardDate {
+  grid-area: date;
+  @apply text-[--text-muted] text-sm font-medium;
+  @apply text-md capitalize text-gray-500 md:my-2;
+}
+
+.blogCardTitle {
+  grid-area: title;
+  @apply leading-[120%] text-[32px] font-normal;
+}
+
+.blogCardDescription {
+  grid-area: description;
+  line-height: 1.5;
+  font-size: 20px;
+  @apply text-gray-500 md:-mt-2 md:mb-4 text-pretty;
+}
+
+.blogCardAuthor {
+  grid-area: author;
+  @apply grid min-h-[48px] grid-cols-[auto_1fr] items-center gap-x-4 gap-y-1 leading-none grid-rows-2;
+}
+
+.blogCardAuthorFigure {
+  @apply border-[--brand] relative row-span-full size-12 rounded-full border-2;
+}
+
+.blogCardTags {
+  grid-area: tags;
+  @apply flex flex-wrap gap-x-4 text-base uppercase leading-none;
+
+  @media (min-width: 768px) {
+    align-self: end;
+    justify-self: end;
+  }
+}
+
+.blogCardTagLink {
+  @apply hover:border-[--bg-color-dark] border-b-2 border-transparent transition-colors;
+}
