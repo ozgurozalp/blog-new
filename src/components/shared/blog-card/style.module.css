@@ -21,7 +21,7 @@
 }
 
 .blogCardAuthor {
-  @apply min-h-[48px] flex items-center gap-x-4 leading-none grid-rows-2;
+  @apply mt-auto min-h-[48px] flex items-center gap-x-4 leading-none grid-rows-2;
 }
 
 .blogCardAuthorFigure {
