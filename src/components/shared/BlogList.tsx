@@ -1,7 +1,6 @@
 import { BlogCard } from "@/components/shared/blog-card";
 import { allBlogs } from "@/../content";
 import { Category } from "@/lib/constants";
-import { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
 interface BlogListProps {
