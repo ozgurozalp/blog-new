@@ -1,11 +1,42 @@
 import { notFound } from "next/navigation";
 import { allBlogs } from "@/../content";
 import { dateFormat } from "@/lib/utils";
+import { Metadata } from "next";
 
 type Props = { params: { slug: string } };
 
 export function generateStaticParams() {
   return allBlogs.paths().map((pathname) => ({ slug: pathname }));
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const doc = await allBlogs.get(params.slug);
+
+  if (!doc) {
+    return {};
+  }
+
+  const { frontMatter } = doc;
+
+  return {
+    title: frontMatter.title,
+    description: frontMatter.description,
+    authors: {
+      url: frontMatter.author.url,
+      name: frontMatter.author.name,
+    },
+    category: frontMatter.categories.join(", "),
+    openGraph: {
+      title: frontMatter.title,
+      description: frontMatter.description,
+      images: frontMatter.coverImage,
+    },
+    twitter: {
+      title: frontMatter.title,
+      description: frontMatter.description,
+      images: frontMatter.coverImage,
+    },
+  };
 }
 
 export default async function Page({ params }: Props) {

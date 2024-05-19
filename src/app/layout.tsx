@@ -12,6 +12,17 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Özgür ÖZALP's Blog",
   description: "A blog about software development and other stuff",
+  openGraph: {
+    title: "Özgür ÖZALP's Blog",
+    description: "A blog about software development and other stuff",
+  },
+  twitter: {
+    title: "Özgür ÖZALP's Blog",
+    description: "A blog about software development and other stuff",
+  },
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export const viewport: Viewport = {
