@@ -1,4 +1,5 @@
 import { createSource } from "mdxts";
+import type { Category } from "@/lib/constants";
 
 export type BlogMeta = {
   title: string;
@@ -12,7 +13,7 @@ export type BlogMeta = {
     title: string;
     avatar: string;
   };
-  categories: string[];
+  categories: Category[];
 };
 
 export const allBlogs = createSource<{
