@@ -2,6 +2,7 @@ import { BlogCard } from "@/components/shared/blog-card";
 import { allBlogs } from "@/../content";
 import { Category } from "@/lib/constants";
 import { ReactNode } from "react";
+import { cn } from "@/lib/utils";
 
 interface BlogListProps {
   category?: Category;
@@ -21,7 +22,11 @@ export default function BlogList({ category }: BlogListProps) {
   return (
     <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-6">
       {blogs.map((blog, index) => (
-        <BlogCard key={index} blog={blog} />
+        <BlogCard
+          key={index}
+          blog={blog}
+          className={cn(blogs.length === 1 && "!h-fit")}
+        />
       ))}
     </div>
   );

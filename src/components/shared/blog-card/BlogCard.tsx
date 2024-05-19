@@ -6,15 +6,16 @@ import { CATEGORIES } from "@/lib/constants";
 
 interface BlogCardProps {
   blog: ReturnType<typeof allBlogs.all>[number];
+  className?: string;
 }
 
 function getCategoryNameBySlug(slug: string) {
   return CATEGORIES.find((category) => category.slug === slug)?.name;
 }
 
-export default function BlogCard({ blog }: BlogCardProps) {
+export default function BlogCard({ blog, className }: BlogCardProps) {
   return (
-    <article className={cn(styles.blogCardContainer)}>
+    <article className={cn(styles.blogCardContainer, className)}>
       <Link className={cn(styles.blogCardCover)} href={blog.pathname}>
         <img
           width={1980}
