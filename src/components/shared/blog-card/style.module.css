@@ -12,6 +12,7 @@
 
 .blogCardTitle {
   @apply md:text-3xl font-normal text-xl text-balance line-clamp-2;
+  line-height: normal !important;
 }
 
 .blogCardDescription {
@@ -20,7 +21,7 @@
 }
 
 .blogCardAuthor {
-  @apply grid min-h-[48px] grid-cols-[auto_1fr] items-center gap-x-4 gap-y-1 leading-none grid-rows-2;
+  @apply min-h-[48px] flex items-center gap-x-4 leading-none grid-rows-2;
 }
 
 .blogCardAuthorFigure {
@@ -28,7 +29,7 @@
 }
 
 .blogCardTags {
-  @apply flex flex-wrap gap-x-4 text-base uppercase leading-none;
+  @apply flex flex-wrap gap-x-4 text-base uppercase leading-none text-gray-500 hover:text-black;
 
   @media (min-width: 768px) {
     align-self: end;

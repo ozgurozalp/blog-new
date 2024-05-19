@@ -100,6 +100,6 @@
     @apply border-border;
   }
   body {
-    @apply bg-[--bg-color];
+    @apply bg-[--bg-color] min-h-dvh;
   }
 }
