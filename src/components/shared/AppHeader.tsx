@@ -20,21 +20,18 @@ export default function AppHeader() {
               stroke="#131212"
               strokeWidth="4"
               strokeLinecap="round"
-              color-interpolation-filters="round"
             />
             <path
               d="M3 12H21"
               stroke="#131212"
               strokeWidth="4"
               strokeLinecap="round"
-              color-interpolation-filters="round"
             />
             <path
               d="M3 6H21"
               stroke="#131212"
               strokeWidth="4"
               strokeLinecap="round"
-              color-interpolation-filters="round"
             />
           </svg>
         </button>
