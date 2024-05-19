@@ -23,6 +23,12 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.png",
   },
+  other: {
+    "apple-mobile-web-app-status-bar-style": "#f4f4f4",
+    "msapplication-navbutton-color": "#f4f4f4",
+    "msapplication-TileColor": "#f4f4f4",
+    "mobile-web-app-capable": "yes",
+  },
 };
 
 export const viewport: Viewport = {
