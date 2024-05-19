@@ -8,7 +8,7 @@
     @media (min-width: 1024px) {
       --header-height: 80px;
     }
-    --body-height: calc(100vh - var(--header-height));
+    --body-height: calc(100dvh - var(--header-height));
 
     --background: 0 0% 100%;
     --foreground: 20 14.3% 4.1%;
