@@ -1,5 +1,5 @@
 import { BlogCard } from "@/components/shared/blog-card";
-import { allBlogs } from "@/content";
+import { allBlogs } from "@/../content";
 
 export default function BlogList() {
   const blogs = allBlogs.all();

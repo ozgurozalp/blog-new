@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { allBlogs } from "@/content";
+import { allBlogs } from "@/../content";
 import { dateFormat } from "@/lib/utils";
 import Image from "next/image";
 

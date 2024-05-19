@@ -2,7 +2,7 @@ import styles from "./style.module.css";
 import { cn, dateFormat } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
-import { allBlogs } from "@/content";
+import { allBlogs } from "@/../content";
 
 interface BlogCardProps {
   blog: ReturnType<typeof allBlogs.all>[number];
