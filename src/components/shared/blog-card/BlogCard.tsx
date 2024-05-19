@@ -9,9 +9,10 @@ interface BlogCardProps {
 }
 
 export default function BlogCard({ blog }: BlogCardProps) {
+  const path = blog.pathname.replace("/blog", "");
   return (
     <article className={cn(styles.blogCardContainer)}>
-      <Link className={cn(styles.blogCardCover)} href={blog.pathname}>
+      <Link className={cn(styles.blogCardCover)} href={path}>
         <Image
           width={1980}
           height={1200}
@@ -41,7 +42,7 @@ export default function BlogCard({ blog }: BlogCardProps) {
               ))}
             </div>
           </div>
-          <Link href={blog.pathname}>
+          <Link href={path}>
             <h2 className={cn(styles.blogCardTitle)}>
               {blog.frontMatter.title}
             </h2>
