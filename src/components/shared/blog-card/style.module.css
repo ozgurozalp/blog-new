@@ -28,7 +28,7 @@
   @apply border-[--brand] relative row-span-full size-12 rounded-full border-2;
 }
 
-.blogCardTags {
+.blogCardCategories {
   @apply flex flex-wrap gap-x-4 text-base uppercase leading-none text-gray-500 hover:text-black;
 
   @media (min-width: 768px) {

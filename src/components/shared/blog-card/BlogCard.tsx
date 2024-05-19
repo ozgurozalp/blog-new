@@ -2,9 +2,14 @@ import styles from "./style.module.css";
 import { cn, dateFormat } from "@/lib/utils";
 import Link from "next/link";
 import { allBlogs } from "@/../content";
+import { CATEGORIES } from "@/lib/constants";
 
 interface BlogCardProps {
   blog: ReturnType<typeof allBlogs.all>[number];
+}
+
+function getCategoryNameBySlug(slug: string) {
+  return CATEGORIES.find((category) => category.slug === slug)?.name;
 }
 
 export default function BlogCard({ blog }: BlogCardProps) {
@@ -28,16 +33,18 @@ export default function BlogCard({ blog }: BlogCardProps) {
             >
               {dateFormat(blog.frontMatter.createdAt)}
             </time>
-            <div className={cn(styles.blogCardTags)}>
-              {blog.frontMatter.categories.map((tag: string, index: number) => (
-                <Link
-                  key={index}
-                  className={cn(styles.blogCardTagLink)}
-                  href={`/blog/tag/${tag}`}
-                >
-                  #{tag}
-                </Link>
-              ))}
+            <div className={cn(styles.blogCardCategories)}>
+              {blog.frontMatter.categories.map(
+                (category: string, index: number) => (
+                  <Link
+                    key={index}
+                    className={cn(styles.blogCardTagLink)}
+                    href={`/category/${category}`}
+                  >
+                    #{getCategoryNameBySlug(category)}
+                  </Link>
+                ),
+              )}
             </div>
           </div>
           <Link href={blog.pathname}>
