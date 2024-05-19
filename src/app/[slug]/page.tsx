@@ -6,7 +6,7 @@ import Image from "next/image";
 type Props = { params: { slug: string } };
 
 export default async function Page({ params }: Props) {
-  const doc = await allBlogs.get("/blog/" + params.slug);
+  const doc = await allBlogs.get(params.slug);
 
   if (!doc) {
     return notFound();
