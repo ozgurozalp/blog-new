@@ -1,6 +1,5 @@
 import styles from "./style.module.css";
 import { cn, dateFormat } from "@/lib/utils";
-import Image from "next/image";
 import Link from "next/link";
 import { allBlogs } from "@/../content";
 
@@ -12,7 +11,7 @@ export default function BlogCard({ blog }: BlogCardProps) {
   return (
     <article className={cn(styles.blogCardContainer)}>
       <Link className={cn(styles.blogCardCover)} href={blog.pathname}>
-        <Image
+        <img
           width={1980}
           height={1200}
           alt={blog.frontMatter.title}
@@ -53,7 +52,7 @@ export default function BlogCard({ blog }: BlogCardProps) {
         <div className={cn(styles.blogCardAuthor)}>
           <figure className={cn(styles.blogCardAuthorFigure)}>
             <span className="absolute inset-0 block">
-              <Image
+              <img
                 width={34}
                 height={34}
                 alt={blog.frontMatter.author.name}

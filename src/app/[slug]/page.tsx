@@ -1,9 +1,12 @@
 import { notFound } from "next/navigation";
 import { allBlogs } from "@/../content";
 import { dateFormat } from "@/lib/utils";
-import Image from "next/image";
 
 type Props = { params: { slug: string } };
+
+export function generateStaticParams() {
+  return allBlogs.paths().map((pathname) => ({ slug: pathname }));
+}
 
 export default async function Page({ params }: Props) {
   const doc = await allBlogs.get(params.slug);
@@ -39,7 +42,7 @@ export default async function Page({ params }: Props) {
           <div className="hidden md:block absolute top-52 h-[calc(100%-13rem)] w-full border border-gray-200 bg-white/50 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur-lg" />
           <div className="w-full container grid grid-cols-3 gap-5 pt-4 md:pt-10 lg:gap-10">
             <div className="relative col-span-3 flex flex-col bg-white sm:rounded-t-xl sm:border sm:border-gray-200 md:col-span-2">
-              <Image
+              <img
                 className="aspect-video rounded-t-xl object-cover"
                 width={1920}
                 height={1080}
@@ -59,7 +62,7 @@ export default async function Page({ params }: Props) {
                   rel="noopener noreferrer"
                   href={frontMatter.author.url}
                 >
-                  <Image
+                  <img
                     alt={frontMatter.author.name}
                     loading="lazy"
                     width={44}
