@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { ReactNode } from "react";
 import { Poppins } from "next/font/google";
@@ -12,6 +12,10 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Özgür ÖZALP's Blog",
   description: "A blog about software development and other stuff",
+};
+
+export const viewport: Viewport = {
+  themeColor: "#f4f4f4",
 };
 
 export default function RootLayout({

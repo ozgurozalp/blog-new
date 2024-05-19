@@ -50,11 +50,11 @@ export default async function Page({ params }: Props) {
                 <Document />
               </div>
             </div>
-            <div className="sticky top-1 col-span-1 hidden flex-col divide-y divide-gray-200 self-start sm:flex">
-              <div className="flex flex-col space-y-4 py-5">
-                <p className="text-sm text-gray-500">Author</p>
+            <div className="sticky top-16 lg:top-1 col-span-1 hidden flex-col divide-y divide-gray-200 self-start sm:flex">
+              <div className="flex flex-col gap-y-3 pt-2">
+                <p className="text-sm font-semibold text-gray-500">Author</p>
                 <a
-                  className="group flex items-center space-x-3"
+                  className="group flex items-center gap-x-3"
                   target="_blank"
                   rel="noopener noreferrer"
                   href={frontMatter.author.url}
@@ -62,14 +62,19 @@ export default async function Page({ params }: Props) {
                   <Image
                     alt={frontMatter.author.name}
                     loading="lazy"
-                    width={40}
-                    height={40}
-                    className="rounded-full transition-all group-hover:brightness-90"
+                    width={44}
+                    height={44}
+                    className="rounded-full size-11 transition-all group-hover:brightness-90"
                     src={frontMatter.author.avatar}
                   />
-                  <p className="font-semibold text-gray-700">
-                    {frontMatter.author.name}
-                  </p>
+                  <div>
+                    <p className="font-semibold text-gray-700">
+                      {frontMatter.author.name}
+                    </p>
+                    <p className="font-medium text-xs text-gray-600">
+                      {frontMatter.author.title}
+                    </p>
+                  </div>
                 </a>
               </div>
             </div>
