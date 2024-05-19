@@ -19,6 +19,7 @@ export const allBlogs = createSource<{
   frontMatter: BlogMeta;
 }>("blog/*.mdx", {
   baseDirectory: "./blog",
+  sourceDirectory: "./",
   sort: (a, b) => {
     return new Date(a.createdAt!).getTime() - new Date(b.createdAt!).getTime();
   },
