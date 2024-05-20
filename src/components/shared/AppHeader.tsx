@@ -13,6 +13,16 @@ export default function AppHeader() {
   const throttledWidth = useThrottle(width, 500);
 
   useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
+  useEffect(() => {
     if (!throttledWidth) return;
     setOpen(false);
   }, [throttledWidth]);
