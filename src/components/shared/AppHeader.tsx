@@ -14,8 +14,9 @@ export default function AppHeader() {
   const { width } = useWindowSize();
 
   useEffect(() => {
+    if (!open) return;
     onClick(false);
-  }, [width]);
+  }, [width, open]);
 
   /*
   const blogs = allBlogs.all();
