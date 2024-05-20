@@ -12,6 +12,18 @@ import {
 import AppLogo from "@/components/shared/AppLogo";
 
 export default function AppHeader() {
+  /*
+  const blogs = allBlogs.all();
+
+  const categoriesOnlyHasOneBlog = CATEGORIES.filter((category) => {
+    return (
+      blogs.filter((blog) =>
+        blog.frontMatter.categories.includes(category.slug),
+      ).length === 1
+    );
+  });
+   */
+
   return (
     <header className="sticky top-0 z-50 lg:py-0 lg:relative">
       <div className="container flex [&>*]:shrink-0 justify-between items-center relative z-50 w-full h-[--header-height] bg-[#f5f5f5f2]">
