@@ -1,7 +1,6 @@
 import { SVGProps } from "react";
 
-interface LogoProps extends SVGProps<SVGSVGElement> {}
-export default function AppLogo(props: LogoProps) {
+export default function AppLogo(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       width="84"

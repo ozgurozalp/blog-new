@@ -105,7 +105,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background min-h-dvh;
+    @apply bg-background min-h-dvh overflow-x-hidden;
   }
   &:has(.mobile-menu-open) {
     overflow: hidden;
@@ -155,5 +155,55 @@
   .blog-card-tag-link {
     @apply self-center text-sm sm:text-base;
     @apply hover:border-background border-b-2 border-transparent transition-colors;
+  }
+}
+
+.hamburger-menu-button {
+  cursor: pointer;
+  transition: transform 400ms;
+  user-select: none;
+
+  &.active {
+    transform: rotate(45deg);
+  }
+
+  & .line {
+    fill: none;
+    transition:
+      stroke-dasharray 400ms,
+      stroke-dashoffset 400ms;
+    stroke: #000;
+    stroke-width: 5.5;
+    stroke-linecap: round;
+  }
+
+  & .top {
+    stroke-dasharray: 40 160;
+  }
+
+  & .middle {
+    stroke-dasharray: 40 142;
+    transform-origin: 50%;
+    transition: transform 400ms;
+  }
+
+  & .bottom {
+    stroke-dasharray: 40 85;
+    transform-origin: 50%;
+    transition:
+      transform 400ms,
+      stroke-dashoffset 400ms;
+  }
+
+  &.active .top {
+    stroke-dashoffset: -64px;
+  }
+
+  &.active .middle {
+    transform: rotate(90deg);
+  }
+
+  &.active .bottom {
+    stroke-dashoffset: -64px;
   }
 }
