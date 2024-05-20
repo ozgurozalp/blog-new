@@ -100,7 +100,7 @@ function MobileMenu({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 20 }}
-          className="flex flex-col justify-between bg-background/95 fixed border-t-2 left-0 right-0 z-50 top-[--header-height] h-[--body-height] mobile-menu-open"
+          className="flex flex-col justify-between bg-background/95 fixed border-t-2 left-0 -bottom-1 right-0 z-50 top-[--header-height] mobile-menu-open"
         >
           <nav>
             {CATEGORIES.map((category, index) => (
@@ -117,7 +117,7 @@ function MobileMenu({
               </div>
             ))}
           </nav>
-          <div className="flex justify-center items-center font-normal p-4 align-center text-base">
+          <div className="flex justify-center items-center font-normal p-4 pb-5 align-center text-base">
             <span>
               Created by{" "}
               <a
