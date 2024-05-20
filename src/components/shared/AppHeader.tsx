@@ -60,7 +60,7 @@ export default function AppHeader() {
         </nav>
         <button
           onClick={() => setOpen((prev) => !prev)}
-          className="-m-2 size-12 shrink-0 hover:cursor-pointer flex lg:hidden overflow-hidden"
+          className="-m-2 size-12 shrink-0 hover:cursor-pointer flex lg:hidden"
         >
           <svg
             className={cn(
@@ -118,9 +118,9 @@ function MobileMenu({
             ))}
           </nav>
           <motion.div
-            initial={{ y: "100%" }}
+            initial={{ y: 20 }}
             animate={{ y: 0 }}
-            exit={{ y: "100%" }}
+            exit={{ y: 20 }}
             transition={{ delay: 0.1 }}
             className="flex justify-center items-center font-normal p-4 align-center text-base"
           >
