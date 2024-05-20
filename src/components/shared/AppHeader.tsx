@@ -117,13 +117,7 @@ function MobileMenu({
               </div>
             ))}
           </nav>
-          <motion.div
-            initial={{ y: 20 }}
-            animate={{ y: 0 }}
-            exit={{ y: 20 }}
-            transition={{ delay: 0.1 }}
-            className="flex justify-center items-center font-normal p-4 align-center text-base"
-          >
+          <div className="flex justify-center items-center font-normal p-4 align-center text-base">
             <span>
               Created by{" "}
               <a
@@ -135,7 +129,7 @@ function MobileMenu({
                 Özgür ÖZALP
               </a>
             </span>
-          </motion.div>
+          </div>
         </motion.div>
       )}
     </AnimatePresence>
