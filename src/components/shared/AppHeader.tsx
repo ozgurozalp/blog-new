@@ -40,59 +40,62 @@ export default function AppHeader() {
    */
 
   return (
-    <header
-      className={cn(
-        "sticky top-0 z-50 lg:py-0 lg:relative h-[--header-height] bg-background/95",
-      )}
-    >
-      <MobileMenu open={open} setOpen={setOpen} />
-      <div className="container flex [&>*]:shrink-0 justify-between items-center relative z-50 w-full max-h-[--header-height]">
-        <Link
-          className="flex items-center text-2xl font-semibold overflow-hidden max-h-[--header-height]"
-          href="/"
-        >
-          <AppLogo className="size-36" />
-        </Link>
-        <nav className="rounded-4xl hidden lg:flex [&>*]:shrink-0 items-center p-1 text-lg h-14 leading-[22px] border-2 bg-white border-[--brand]">
-          {CATEGORIES.map((category, index) => (
-            <Link
-              className={cn(
-                "px-7 h-full flex items-center -mx-2 hover:bg-[--brand] hover:text-white transition-all rounded-full",
-                index === 0 && "!ml-0",
-                index === CATEGORIES.length - 1 && "!mr-0",
-              )}
-              key={category.slug}
-              href={`/category/${category.slug}`}
-            >
-              {category.name}
-            </Link>
-          ))}
-        </nav>
-        <button
-          onClick={() => setOpen((prev) => !prev)}
-          className="-m-2 size-12 shrink-0 hover:cursor-pointer flex lg:hidden"
-        >
-          <svg
-            className={cn(
-              "hamburger-menu-button w-full shrink-0",
-              open && "active",
-            )}
-            viewBox="0 0 100 100"
-            width="80"
+    <>
+      <header
+        className={cn(
+          "sticky top-0 z-50 lg:py-0 lg:relative h-[--header-height] bg-background/95",
+        )}
+      >
+        <div className="container flex [&>*]:shrink-0 justify-between items-center relative z-50 w-full max-h-[--header-height]">
+          <Link
+            onClick={() => setOpen(false)}
+            className="flex items-center text-2xl font-semibold overflow-hidden max-h-[--header-height]"
+            href="/"
           >
-            <path
-              className="line top"
-              d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"
-            />
-            <path className="line middle" d="m 30,50 h 40" />
-            <path
-              className="line bottom"
-              d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"
-            />
-          </svg>
-        </button>
-      </div>
-    </header>
+            <AppLogo className="size-36" />
+          </Link>
+          <nav className="rounded-4xl hidden lg:flex [&>*]:shrink-0 items-center p-1 text-lg h-14 leading-[22px] border-2 bg-white border-[--brand]">
+            {CATEGORIES.map((category, index) => (
+              <Link
+                className={cn(
+                  "px-7 h-full flex items-center -mx-2 hover:bg-[--brand] hover:text-white transition-all rounded-full",
+                  index === 0 && "!ml-0",
+                  index === CATEGORIES.length - 1 && "!mr-0",
+                )}
+                key={category.slug}
+                href={`/category/${category.slug}`}
+              >
+                {category.name}
+              </Link>
+            ))}
+          </nav>
+          <button
+            onClick={() => setOpen((prev) => !prev)}
+            className="-m-2 size-12 shrink-0 hover:cursor-pointer flex lg:hidden"
+          >
+            <svg
+              className={cn(
+                "hamburger-menu-button w-full shrink-0",
+                open && "active",
+              )}
+              viewBox="0 0 100 100"
+              width="80"
+            >
+              <path
+                className="line top"
+                d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"
+              />
+              <path className="line middle" d="m 30,50 h 40" />
+              <path
+                className="line bottom"
+                d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"
+              />
+            </svg>
+          </button>
+        </div>
+      </header>
+      <MobileMenu open={open} setOpen={setOpen} />
+    </>
   );
 }
 
