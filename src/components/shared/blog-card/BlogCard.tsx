@@ -1,4 +1,3 @@
-import styles from "./style.module.css";
 import { cn, dateFormat } from "@/lib/utils";
 import Link from "next/link";
 import { allBlogs } from "@/../content";
@@ -15,8 +14,8 @@ function getCategoryNameBySlug(slug: string) {
 
 export default function BlogCard({ blog, className }: BlogCardProps) {
   return (
-    <article className={cn(styles.blogCardContainer, className)}>
-      <Link className={cn(styles.blogCardCover)} href={blog.pathname}>
+    <article className={cn("blog-card-container", className)}>
+      <Link className={cn("blog-card-cover")} href={blog.pathname}>
         <img
           width={1980}
           height={1200}
@@ -30,16 +29,16 @@ export default function BlogCard({ blog, className }: BlogCardProps) {
           <div className="flex mt-auto justify-between">
             <time
               dateTime={blog.frontMatter.createdAt.toString()}
-              className={cn(styles.blogCardDate)}
+              className={cn("blog-card-date")}
             >
               {dateFormat(blog.frontMatter.createdAt)}
             </time>
-            <div className={cn(styles.blogCardCategories)}>
+            <div className={cn("blog-card-categories")}>
               {blog.frontMatter.categories.map(
                 (category: string, index: number) => (
                   <Link
                     key={index}
-                    className={cn(styles.blogCardTagLink)}
+                    className={cn("blog-card-tagLink")}
                     href={`/category/${category}`}
                   >
                     #{getCategoryNameBySlug(category)}
@@ -49,16 +48,14 @@ export default function BlogCard({ blog, className }: BlogCardProps) {
             </div>
           </div>
           <Link href={blog.pathname}>
-            <h2 className={cn(styles.blogCardTitle)}>
-              {blog.frontMatter.title}
-            </h2>
+            <h2 className={cn("blog-card-title")}>{blog.frontMatter.title}</h2>
           </Link>
         </div>
-        <p className={cn(styles.blogCardDescription)}>
+        <p className={cn("blog-card-description")}>
           {blog.frontMatter.description}
         </p>
-        <div className={cn(styles.blogCardAuthor)}>
-          <figure className={cn(styles.blogCardAuthorFigure)}>
+        <div className={cn("blog-card-author")}>
+          <figure className={cn("blog-card-author-figure")}>
             <span className="absolute inset-0 block">
               <img
                 width={34}

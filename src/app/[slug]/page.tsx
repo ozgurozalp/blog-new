@@ -55,16 +55,14 @@ export default async function Page({ params }: Props) {
       <div className="flex flex-col">
         <div className="container">
           <div className="flex flex-col gap-4 pt-4">
-            <h1 className="font-display max-w-2xl text-2xl font-extrabold text-[--tw-prose-headings] sm:text-4xl text-balance sm:leading-snug">
-              {frontMatter.title}
-            </h1>
+            <h1 className="blog-card-title max-w-2xl">{frontMatter.title}</h1>
             <time
               dateTime={frontMatter.createdAt.toString()}
-              className="text-sm text-gray-500 transition-colors hover:text-gray-800"
+              className="blog-card-date"
             >
               {dateFormat(frontMatter.createdAt)}
             </time>
-            <p className="sm:text-lg max-w-4xl text-[#374151] text-pretty">
+            <p className="sm:max-w-4xl blog-card-description text-[#374151] text-pretty">
               {frontMatter.description}
             </p>
           </div>
@@ -80,13 +78,13 @@ export default async function Page({ params }: Props) {
                 src={frontMatter.coverImage}
                 alt={frontMatter.title}
               />
-              <div className="prose p-4 sm:p-6 max-w-full prose-gray transition-all prose-headings:relative prose-headings:scroll-mt-20 prose-headings:font-display prose-headings:font-bold">
+              <div className="prose p-4 sm:p-10 max-w-full prose-gray transition-all prose-headings:relative prose-headings:scroll-mt-20 prose-headings:font-display prose-headings:font-bold">
                 <Document />
               </div>
             </div>
             <div className="sticky top-16 lg:top-1 col-span-1 hidden flex-col divide-y divide-gray-200 self-start sm:flex">
               <div className="flex flex-col gap-y-3 pt-2">
-                <p className="text-sm font-semibold text-gray-500">Author</p>
+                <p className="text-sm font-semibold text-gray-800">Author</p>
                 <a
                   className="group flex items-center gap-x-3"
                   target="_blank"
@@ -102,10 +100,10 @@ export default async function Page({ params }: Props) {
                     src={frontMatter.author.avatar}
                   />
                   <div>
-                    <p className="font-semibold text-gray-700">
+                    <p className="hover:underline text-balance text-base leading-[none]">
                       {frontMatter.author.name}
                     </p>
-                    <p className="font-medium text-xs text-gray-600">
+                    <p className="font-medium text-xs text-gray-700">
                       {frontMatter.author.title}
                     </p>
                   </div>
