@@ -25,8 +25,8 @@ export default function AppHeader() {
    */
 
   return (
-    <header className="sticky top-0 z-50 lg:py-0 lg:relative">
-      <div className="container flex [&>*]:shrink-0 justify-between items-center relative z-50 w-full h-[--header-height] bg-[#f5f5f5f2]">
+    <header className="sticky top-0 z-50 lg:py-0 lg:relative h-[--header-height] bg-[#f5f5f5f2]">
+      <div className="container flex [&>*]:shrink-0 justify-between items-center relative z-50 w-full max-h-full">
         <Link className="block text-2xl font-semibold" href="/">
           <AppLogo className="size-36" />
         </Link>
