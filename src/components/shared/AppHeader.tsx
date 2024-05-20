@@ -5,22 +5,17 @@ import { cn } from "@/lib/utils";
 import AppLogo from "@/components/shared/AppLogo";
 import { AnimatePresence, motion } from "framer-motion";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
-import { useThrottle, useWindowSize } from "@uidotdev/usehooks";
+import { useThrottle } from "@uidotdev/usehooks";
+import { useEventListener, useWindowSize } from "usehooks-ts";
 
 export default function AppHeader() {
   const [open, setOpen] = useState(false);
   const { width } = useWindowSize();
   const throttledWidth = useThrottle(width, 500);
 
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setOpen(false);
-    };
-    document.addEventListener("keydown", handleKeyDown);
-    return () => {
-      document.removeEventListener("keydown", handleKeyDown);
-    };
-  }, []);
+  useEventListener("keydown", (event) => {
+    if (event.key === "Escape") setOpen(false);
+  });
 
   useEffect(() => {
     if (!throttledWidth) return;
