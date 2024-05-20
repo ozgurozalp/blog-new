@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --header-height: 4rem;
+    --header-height: 4.5rem;
     @media (min-width: 1024px) {
       --header-height: 80px;
     }
@@ -106,6 +106,9 @@
   }
   body {
     @apply bg-background min-h-dvh;
+  }
+  &:has(.mobile-menu-open) {
+    overflow: hidden;
   }
 }
 
