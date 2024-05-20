@@ -43,7 +43,7 @@ export default function AppHeader() {
     <>
       <header
         className={cn(
-          "sticky top-0 z-50 lg:py-0 lg:relative h-[--header-height] bg-background/95",
+          "sticky pointer-events-auto top-0 z-50 lg:py-0 lg:relative h-[--header-height] bg-background/95",
         )}
       >
         <div className="container flex [&>*]:shrink-0 justify-between items-center relative z-50 w-full max-h-[--header-height]">
@@ -71,7 +71,7 @@ export default function AppHeader() {
           </nav>
           <button
             onClick={() => setOpen((prev) => !prev)}
-            className="-m-2 size-12 shrink-0 hover:cursor-pointer flex lg:hidden"
+            className="-m-2 size-12 shrink-0 hover:cursor-pointer flex lg:hidden overflow-hidden"
           >
             <svg
               className={cn(
@@ -113,7 +113,7 @@ function MobileMenu({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 20 }}
-          className="flex flex-col justify-between bg-background/95 fixed border-t-2 left-0 -bottom-1 right-0 z-50 top-[--header-height] mobile-menu-open"
+          className="flex flex-col justify-between bg-background/95 fixed border-t-2 max-w-full w-full pointer-events-auto bottom-0 z-50 top-[--header-height] mobile-menu-open"
         >
           <nav>
             {CATEGORIES.map((category, index) => (

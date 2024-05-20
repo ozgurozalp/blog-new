@@ -107,8 +107,9 @@
   body {
     @apply bg-background min-h-dvh overflow-x-hidden;
   }
-  &:has(.mobile-menu-open) {
-    overflow: hidden;
+  body:has(.mobile-menu-open) {
+    overflow-y: hidden;
+    pointer-events: none;
   }
 }
 
