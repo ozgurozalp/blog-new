@@ -62,15 +62,15 @@ export default async function Page({ params }: Props) {
             >
               {dateFormat(frontMatter.createdAt)}
             </time>
-            <p className="sm:max-w-4xl blog-card-description text-[#374151] text-pretty">
+            <p className="max-w-full sm:max-w-lg lg:max-w-xl xl:max-w-3xl blog-card-description text-[#374151]">
               {frontMatter.description}
             </p>
           </div>
         </div>
         <div className="relative">
-          <div className="hidden md:block absolute top-52 h-[calc(100%-13rem)] w-full border border-gray-200 bg-white/50 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur-lg" />
+          <div className="hidden md:block absolute top-52 h-[calc(100%-13rem)] w-full border-t border-gray-200 bg-background" />
           <div className="w-full container grid grid-cols-3 gap-5 pt-4 md:pt-10 lg:gap-10">
-            <div className="relative col-span-3 flex flex-col bg-white sm:rounded-t-xl sm:border sm:border-gray-200 md:col-span-2">
+            <div className="relative col-span-3 flex flex-col bg-white sm:rounded-t-xl sm:border !border-b-0 sm:border-gray-200 md:col-span-2">
               <img
                 className="aspect-video rounded-t-xl object-cover"
                 width={1920}
