@@ -38,7 +38,7 @@ export default function BlogCard({ blog, className }: BlogCardProps) {
                 (category: string, index: number) => (
                   <Link
                     key={index}
-                    className={cn("blog-card-tagLink")}
+                    className={cn("blog-card-tag-link")}
                     href={`/category/${category}`}
                   >
                     #{getCategoryNameBySlug(category)}

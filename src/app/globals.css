@@ -11,6 +11,7 @@
     --body-height: calc(100dvh - var(--header-height));
 
     --background: 0 0% 96%;
+    --background-dark: 0 0% 90%;
     --foreground: 20 14.3% 4.1%;
 
     --card: 0 0% 100%;
