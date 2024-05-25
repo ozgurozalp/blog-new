@@ -1,16 +1,9 @@
-import type { Metadata, Viewport } from "next";
-import "./globals.css";
-import { ReactNode } from "react";
-import { Poppins } from "next/font/google";
 import AppHeader from "@/components/shared/AppHeader";
-
-const poppins = Poppins({
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
-  subsets: ["latin"],
-});
+import { ReactNode } from "react";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Özgür ÖZALP | Full Stack Developer",
+  title: "Blog | Özgür ÖZALP",
   authors: {
     name: "Özgür ÖZALP",
     url: "https://linkedin.com/in/ozgurozalp",
@@ -49,24 +42,6 @@ export const metadata: Metadata = {
   },
 };
 
-export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: dark)", color: "#f4f4f4" },
-    { media: "(prefers-color-scheme: light)", color: "#f4f4f4" },
-  ],
-};
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: ReactNode;
-}>) {
-  return (
-    <html lang="en" className={poppins.className}>
-      <body>
-        <AppHeader />
-        {children}
-      </body>
-    </html>
-  );
+export default function Layout({ children }: { children: ReactNode }) {
+  return children;
 }

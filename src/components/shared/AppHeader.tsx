@@ -7,11 +7,13 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { useThrottle } from "@uidotdev/usehooks";
 import { useEventListener, useWindowSize } from "usehooks-ts";
+import { usePathname } from "next/navigation";
 
 export default function AppHeader() {
   const [open, setOpen] = useState(false);
   const { width } = useWindowSize();
   const throttledWidth = useThrottle(width, 500);
+  const path = usePathname();
 
   useEventListener("keydown", (event) => {
     if (event.key === "Escape") setOpen(false);
@@ -45,7 +47,7 @@ export default function AppHeader() {
           <Link
             onClick={() => setOpen(false)}
             className="flex items-center text-2xl font-semibold overflow-hidden max-h-[--header-height]"
-            href="/"
+            href={path.startsWith("/blog") ? "/blog" : "/"}
           >
             <AppLogo className="size-36" />
           </Link>
@@ -58,7 +60,7 @@ export default function AppHeader() {
                   index === CATEGORIES.length - 1 && "!mr-0",
                 )}
                 key={category.slug}
-                href={`/category/${category.slug}`}
+                href={`/blog/category/${category.slug}`}
               >
                 {category.name}
               </Link>
